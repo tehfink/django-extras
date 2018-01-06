@@ -129,7 +129,8 @@ class SingleOwnerMixin(OwnerMixinBase):
 
     """
     owner = models.ForeignKey(USER_MODEL_NAME, verbose_name=_('owner'),
-                              related_name='%(app_label)s_%(class)s_owner')
+                              related_name='%(app_label)s_%(class)s_owner',
+                              on_delete=models.CASCADE, null=True, blank=False)
 
     objects = SingleOwnerMixinManager()
 
