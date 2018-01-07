@@ -35,7 +35,7 @@ class JsonList(list):
         return dumps(self)
 
 
-class JsonField(six.with_metaclass(models.SubfieldBase, models.TextField)):
+class JsonField(models.TextField):
     """Field that serializes/de-serializes a python list/dictionary to the
     database seamlessly."""
 

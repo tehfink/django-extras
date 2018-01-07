@@ -71,7 +71,7 @@ class MoneyField(models.DecimalField):
         value = self.to_python(value)
         if value is not None:
             value = value._amount
-        return connection.ops.value_to_db_decimal(value, self.max_digits, self.decimal_places)
+        return connection.ops.adapt_decimalfield_value(value, self.max_digits, self.decimal_places)
 
 
 class PercentField(models.FloatField):
