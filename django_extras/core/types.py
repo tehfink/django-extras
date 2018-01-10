@@ -57,7 +57,7 @@ def decimal_value(value):
     return value
 
 
-class Money(object):
+class Money(decimal.Decimal):
     """
     Represents a monetary quantity.
     """
